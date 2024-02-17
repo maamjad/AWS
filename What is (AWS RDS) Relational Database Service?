@@ -1,0 +1,75 @@
+What is (AWS RDS) Relational Database Service?
+
+As an AWS Engineer Amazon Relational Database Service (RDS) represents a managed SQL database solution offered by Amazon Web Services (AWS). It streamlines the process of setting up, operating, and scaling relational databases within the AWS Cloud environment.
+Key features of AWS RDS include:
+Ease of Management: 
+
+
+RDS simplifies the management of relational databases by handling routine tasks such as backups, patch management, and scaling, allowing administrators to focus on core business tasks.
+
+
+High Availability and Failover:
+
+
+ RDS automatically creates multiple instances to ensure high availability and redundancy, minimizing the risk of downtime due to hardware failures or other issues.
+
+
+Support for Multiple Database Engines: 
+
+
+RDS supports various popular relational database engines including PostgreSQL, MySQL, MariaDB, Oracle, SQL Server, and Amazon Aurora, providing flexibility and choice for different application requirements.
+To create an AWS RDS instance and connect it with an EC2 instance, follow these general steps:
+ Go to the RDS dashboard from the AWS Management Console.
+
+
+
+
+Create a New RDS Instance: 
+
+
+Click on the "Create database" button to start the process of creating a new RDS instance.
+
+
+Select Database Engine: 
+
+
+Choose the database engine you want to use (e.g., MySQL, PostgreSQL, etc.) and select appropriate configurations such as instance size, storage type, and allocated storage.
+
+
+Configure Additional Settings:
+
+
+ Configure additional settings including database instance identifier, master username, password, and network settings such as VPC, subnet group, security groups, etc.
+
+
+Enable Public Accessibility (Optional): 
+
+
+If you want your RDS instance to be publicly accessible, configure the appropriate settings for public accessibility.
+
+
+Create RDS Instance: 
+
+
+Review your configuration settings and click on the "Create database" button to create the RDS instance. The creation process may take some time to complete.
+Modify Security Group: 
+
+
+Ensure that the security group associated with the RDS instance allows inbound traffic from the EC2 instance.
+
+
+Connect EC2 Instance to RDS: 
+
+
+Use the connection details provided by AWS (endpoint, port, username, password) to connect your EC2 instance to the RDS instance using your preferred database client or application.
+
+
+Test Connection: 
+
+
+Verify that the connection between the EC2 instance and RDS instance is successful by running test queries or performing database operations.
+
+
+show databases;
+create database employee;
+use employee;
