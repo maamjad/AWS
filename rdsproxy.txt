@@ -1,0 +1,51 @@
+What is RDS Proxy Server ? How to Create a RDS Proxy Server ?
+
+
+
+As a Cloud & DevOps Engineer, I can explain what RDS Proxy server is and provide steps to create it.
+RDS Proxy is a fully managed service provided by AWS that serves as a proxy layer between your application and your relational database in Amazon RDS. 
+It helps manage database connections from your application, reducing the load on your database instances and improving scalability and availability.
+To create an RDS Proxy server, follow these steps:
+Create an RDS Server: 
+
+
+Set up your Amazon RDS instance with the desired database engine (e.g., MySQL, PostgreSQL, etc.) and configuration.
+
+
+Create an IAM Role:
+
+
+ Create an IAM role with the necessary permissions for RDS access. This role will allow the RDS Proxy to interact with your RDS instance securely.
+Create a Secret in AWS Secrets Manager: 
+
+
+Store the credentials needed to access your RDS instance securely in AWS Secrets Manager.
+
+
+ This secret will be used by the RDS Proxy to authenticate and establish connections with the RDS instance.
+
+
+Create the RDS Proxy Server: 
+
+
+Using the AWS Management Console, CLI, or SDK, create the RDS Proxy server. You will specify the RDS instance that the proxy will connect to, along with other configuration details such as connection pool settings.
+
+
+Configure Your Application: 
+
+
+Update your application's database connection settings to point to the RDS Proxy endpoint instead of directly to the RDS instance. 
+
+
+The RDS Proxy endpoint acts as the intermediary between your application and the RDS instance.
+
+
+Testing and Validation: 
+
+
+Verify that your application can successfully connect to the RDS Proxy and perform database operations. You can use tools like the AWS CLI or database client applications to connect to the proxy endpoint and execute queries against your RDS instance.
+Here's a sample MySQL connection command to connect to the RDS Proxy endpoint:
+mysql -h <RDS_Proxy_Endpoint> -P 3306 -u <username> -p
+Once connected, you can execute SQL queries and manage your database as usual.
+Remember to replace <RDS_Proxy_Endpoint> and <username> with your actual RDS Proxy endpoint and database username, respectively.
+By following these steps, you'll have successfully created an RDS Proxy server to help manage connections to your Amazon RDS database instance, enhancing scalability, and availability for your application.
